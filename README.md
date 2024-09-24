@@ -5,6 +5,21 @@ This project is a Spring Boot backend application that demonstrates how to conne
 Microsoft SQL Server (MSSQL) and use Spring Data JPA for database operations. The project is built with Java 21 
 and Maven, and it includes a RESTful API for managing staff data.
 
+## Assignment Detail
+**Java Backend Interview Assignment:**
+1. Create a Java SpringBoot Application.
+2. Project Structure is required for ease of maintainability and readability.
+3. Explore api for Client (Example: to be test via Postman. Please provide the Postman Collection.)
+4. Each api required to log REQUEST & RESPONSE info into logs file.
+5. Your project able connect to database, preferred with MSSQL database (Using Local Machine DB, DB name: TESTDB).
+- *@transactional* is required implement in the project. (For http Methos: INSERT, UPDATE, GET method)
+6. Explore 1 GET method api with Pagination (Each Page 10 records)
+7. Explore an api which will nested calling another api from 3rd party.
+Example: Postman/Client > Your API Endpoint > calling another api
+You are able to upload the assignment to a public git folder and share the URL for us to review.
+
+
+
 ## Prerequisites
 
 To run this project, you need to have the following installed:
@@ -26,13 +41,28 @@ This project includes the following key dependencies in the `pom.xml` file:
 
 ## Getting Started
 
-### 1. Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/your-repository/JavaSpringBoot.git
 cd JavaSpringBoot
 ```
+### SQL Query
+Make sure user 'admin' has access to create table in 'dbo' schema.
+Query below might help.
 
+```
+USE TESTDB;
+GO
+
+-- Grant SELECT, INSERT, UPDATE, DELETE permissions
+GRANT SELECT, INSERT, UPDATE, DELETE ON SCHEMA::dbo TO admin;
+GO
+
+-- Grant ALTER permission on all objects
+GRANT ALTER ON SCHEMA::dbo TO admin;
+GO
+```
 
 ### Reference Documentation
 For further reference, please consider the following sections:

@@ -10,8 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(path = "api/staff")
 public class StaffController {
@@ -23,7 +21,6 @@ public class StaffController {
     public StaffController(StaffService staffService) {
         this.staffService = staffService;
     }
-
 
     @PostMapping
     public ResponseEntity<Staff> createStaff(@RequestBody Staff staff) {

@@ -1,6 +1,6 @@
 {
   "info": {
-    "name": "Corporate Application Staff API",
+    "name": "External Corporate Application Staff API",
     "_postman_id": "12345-67890-abcdef",
     "description": "Postman collection for the Staff API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -18,12 +18,12 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n \"name\": \"John Doe Created\",\n \"email\": \"john@example.com.my\",\n \"dob\": \"1999-01-01\",\n \"age\": 23\n }"
+          "raw": "{\n \"name\": \"John Doe External Created\",\n \"email\": \"john@example.com.my\",\n \"dob\": \"1999-01-01\",\n \"age\": 23\n }"
         },
         "url": {
-          "raw": "{{base_url}}/api/staff",
+          "raw": "{{base_url}}/api/external/staff/create",
           "host": ["{{base_url}}"],
-          "path": ["api", "staff"]
+          "path": ["api", "external", "staff", "create"]
         }
       }
     },
@@ -39,12 +39,12 @@
         ],
         "body": {
           "mode": "raw",
-		  "raw": "{\n \"name\": \"John Doe Updated\",\n \"email\": \"john_new@example.com.my\",\n \"dob\": \"2000-02-02\",\n \"age\": 24\n}"
+          "raw": "{\n \"name\": \"John Doe External Updated\",\n \"email\": \"john_new@example.com.my\",\n \"dob\": \"2000-02-02\",\n \"age\": 24\n }"
         },
         "url": {
-          "raw": "{{base_url}}/api/staff/1",
+          "raw": "{{base_url}}/api/external/staff/update/1",
           "host": ["{{base_url}}"],
-          "path": ["api", "staff", "1"],
+          "path": ["api", "external", "staff", "update", "1"],
           "variable": [
             {
               "key": "id",
@@ -59,9 +59,9 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "{{base_url}}/api/staff/1",
+          "raw": "{{base_url}}/api/external/staff/get/1",
           "host": ["{{base_url}}"],
-          "path": ["api", "staff", "1"],
+          "path": ["api", "external", "staff", "get", "1"],
           "variable": [
             {
               "key": "id",
@@ -76,9 +76,9 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "{{base_url}}/api/staff?page=0&size=10",
+          "raw": "{{base_url}}/api/external/staff/all?page=0&size=10",
           "host": ["{{base_url}}"],
-          "path": ["api", "staff"],
+          "path": ["api", "external", "staff", "all"],
           "query": [
             {
               "key": "page",

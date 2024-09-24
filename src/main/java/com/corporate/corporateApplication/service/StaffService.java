@@ -12,7 +12,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -73,11 +72,6 @@ public class StaffService {
         Page<Staff> staffPage = staffRepository.findAll(pageable);
         logger.info("Response: {}", staffPage);
         return staffPage;
-    }
-
-    // Delete a staff member by ID
-    public void deleteStaff(Long id) {
-        staffRepository.deleteById(id);
     }
 
     @PostConstruct
@@ -267,7 +261,6 @@ public class StaffService {
                             31
                     )
             );
-
 
             staffRepository.saveAll(initialStaff);
         }
