@@ -1,0 +1,102 @@
+{
+  "info": {
+    "name": "Corporate Application Staff API",
+    "_postman_id": "12345-67890-abcdef",
+    "description": "Postman collection for the Staff API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Staff",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"position\": \"Manager\",\n  \"department\": \"HR\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/staff",
+          "host": ["{{base_url}}"],
+          "path": ["api", "staff"]
+        }
+      }
+    },
+    {
+      "name": "Update Staff",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe Updated\",\n  \"position\": \"Senior Manager\",\n  \"department\": \"HR\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/staff/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "staff", "1"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Staff By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/staff/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "staff", "1"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Staffs",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/api/staff?page=0&size=10",
+          "host": ["{{base_url}}"],
+          "path": ["api", "staff"],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
